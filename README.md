@@ -1,11 +1,20 @@
 # convert-srt-to-audacity-label
 
+- Credit to scateu
+- GitHub Profile: https://github.com/scateu
+- Repo: https://github.com/scateu/convert-srt-to-audacity-label
+
+
+---
+
+## Convert
+
 Convert SRT file to audacity supported label. 
 
 Useful when editing an long interview, with auto generated SRT files.
 
-
 Multiple lines within a single SRT screen will be concatenated with `\\`.
+
 
 ## Installation
 
@@ -14,6 +23,7 @@ Multiple lines within a single SRT screen will be concatenated with `\\`.
 ```bash
 $ sudo pip install pysrt  #Linux or macOS
 ```
+
 Or..
 
 ```bash
@@ -22,19 +32,37 @@ $ sudo easy_install pysrt
 
 ## Usage
 
-     $ python convert-srt-to-audacity-label.py  /path/to/your/srt-file.srt
+### Single *.SRT file
 
-## Example
+```bash
+$ python ./main.py -f /path/to/your/srt-file.srt
 
-     $ python convert-srt-to-audacity-label.py demo.srt
-     demo-LABELS.txt wrote.
+# for example:
+$ python main.py demo.srt
+# demo-LABELS.txt wrote.
+```
+
+### Folder includes *.SRT file
+
+```bash
+$ python ./main.py -d /path/to/your/
+
+# for example:
+$ python -d ./ 
+# all *.srt files in ./ will be converted to .txt
+# a merge file will also be created. 
+
+# to turn merging off, add flag -nm
+# for example:
+$ python ./main.py -d /path/to/your/ -nm
+```
 
 ## Platform
 
- - macOS (Tested)
- - Linux (Tested)
- - Windows (Didn't test, but shouldn't be a problem)
+- macOS (Tested)
+- Linux (Tested)
+- Windows (Tested))
 
 ## Reference
- 
-  - <https://github.com/agermanidis/autosub>: Command-line utility for auto-generating subtitles for any video file (Google API)
+
+- <https://github.com/agermanidis/autosub>: Command-line utility for auto-generating subtitles for any video file (Google API)

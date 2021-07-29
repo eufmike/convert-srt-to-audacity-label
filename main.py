@@ -29,7 +29,7 @@ if __name__=="__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('-f', "--input_file_path", help="input SRT file path")
     parser.add_argument('-d', "--input_directory", help="input srt folder")
-    parser.add_argument('-m', "--merge", default=True, help="create a merge txt file")
+    parser.add_argument('-nm', "--no_merge", action='store_true', help="create a merge txt file")
     args = parser.parse_args()
 
     if (args.input_file_path is None) and (args.input_directory is None):
@@ -57,7 +57,7 @@ if __name__=="__main__":
             for ipfile, opfile in zip(srtfilelist, txtfilelist):
                 srt2txtexport(ipfile, opfile)
             
-            if not args.merge is None:
+            if not args.no_merge:
                 df_all = []
                 for iptxt in txtfilelist:
                     df = pd.read_table(iptxt, header=None, names= ['start', 'end', 'content'], na_values='NaN')
