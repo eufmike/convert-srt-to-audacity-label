@@ -4,7 +4,7 @@
 - Original code credit to scateu
 - GitHub Profile: https://github.com/scateu
 - Repo: https://github.com/scateu/convert-srt-to-audacity-label
-s
+
 
 ---
 
